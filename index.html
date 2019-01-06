@@ -1,0 +1,540 @@
+<!doctype html>
+<html>
+<head>
+    <title>A-Frame WebVR Scene Editor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="A WebVR experiment using A-Frame designed and coded by Danilo Pasquariello | Follow me on Twitter @theDart76">
+    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+    <!-- WebVR Scene Editor -->
+    <script src="js/aframe-webvr-scene-editor-v1.js"></script>
+    <!-- Required Component -->
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v5.0.0/dist/aframe-extras.min.js"></script>
+</head>
+
+<body>
+    <a-scene background="color: #333333" antialias="true">
+        <!-- ASSET MANAGEMENT SYSTEM -->
+        <a-assets>
+            <img id="grid" src="assets/webvr-ground-grid.png">
+            <img id="credits" src="assets/webvr-scene-editor-credits.png">
+        </a-assets>
+        
+        <!-- CAMERA RIG -->
+		<a-entity id="cam-rig" position="0 0 9" movement-controls="speed: 0.2">
+            
+            <!-- MAIN WRAPPER -->
+            <a-entity id="main-wrapper">
+                
+                <!-- UI WRAPPER - OFFSET -->
+                <a-entity position="0 0.5 -1.5" rotation="-30 0 0">
+                    
+                    <!-- POSITION WRAPPER -->
+                    <a-entity position="-0.62 0.4 0" class="hidable">
+                        <!-- POSITION LABEL -->
+                        <a-entity text="value: POSITION;
+                                        color: #AAAAAA; align: center; width: 0.8; letterSpacing: 2"
+                                  geometry="primitive: plane; width: 0.52; height: 0.08"
+                                  material="color: #212121; shader: flat"
+                                  position="0.06 0 0">
+                        </a-entity>
+                        <!-- POSITION X MINUS 0.4 -->
+                        <a-plane color="#440000" shader="flat" visual-feedback
+                                 scale="0.08 0.08 0.1" position="-0.16 -0.09 0"
+                                 transform-position="axis: x; direction: negative; value: 0.4">
+                        </a-plane>
+                        <!-- POSITION X MINUS 0.1 -->
+                        <a-plane color="#440000" shader="flat" visual-feedback
+                                 scale="0.08 0.08 0.1" position="-0.07 -0.09 0"
+                                 transform-position="axis: x; direction: negative; value: 0.1">
+                        </a-plane>
+                        <!-- POSITION X AXIS -->
+                        <a-entity text="value: X:; color: #212121; align: center; width: 0.9"
+                                  geometry="primitive: plane; width: 0.06; height: 0.08"
+                                  material="color: #FFFFFF; shader: flat"
+                                  position="0.01 -0.09 0">
+                        </a-entity>
+                        <!-- POSITION X VALUE -->
+                        <a-entity id="position-x-value"
+                                  text="color: #212121; align: center; width: 1"
+                                  geometry="primitive: plane; width: 0.1; height: 0.08"
+                                  material="color: #FFFFFF; shader: flat"
+                                  position="0.09 -0.09 0">
+                        </a-entity>
+                        <!-- POSITION X PLUS 0.1 -->
+                        <a-plane color="#003300" shader="flat" visual-feedback
+                                 scale="0.08 0.08 0.1" position="0.19 -0.09 0"
+                                 transform-position="axis: x; direction: positive; value: 0.1">
+                        </a-plane>
+                        <!-- POSITION X PLUS 0.4 -->
+                        <a-plane color="#003300" shader="flat" visual-feedback
+                                 scale="0.08 0.08 0.1" position="0.28 -0.09 0"
+                                 transform-position="axis: x; direction: positive; value: 0.4">
+                        </a-plane>
+                        
+                        <!-- POSITION Y MINUS 0.4 -->
+                        <a-plane color="#440000" shader="flat" visual-feedback
+                                 scale="0.08 0.08 0.1" position="-0.16 -0.18 0"
+                                 transform-position="axis: y; direction: negative; value: 0.4">
+                        </a-plane>
+                        <!-- POSITION Y MINUS 0.1 -->
+                        <a-plane color="#440000" shader="flat" visual-feedback
+                                 scale="0.08 0.08 0.1" position="-0.07 -0.18 0"
+                                 transform-position="axis: y; direction: negative; value: 0.1">
+                        </a-plane>
+                        <!-- POSITION Y AXIS -->
+                        <a-entity text="value: Y:; color: #212121; align: center; width: 0.9"
+                                  geometry="primitive: plane; width: 0.06; height: 0.08"
+                                  material="color: #FFFFFF; shader: flat"
+                                  position="0.01 -0.18 0">
+                        </a-entity>
+                        <!-- POSITION Y VALUE -->
+                        <a-entity id="position-y-value"
+                                  text="color: #212121; align: center; width: 1"
+                                  geometry="primitive: plane; width: 0.1; height: 0.08"
+                                  material="color: #FFFFFF; shader: flat"
+                                  position="0.09 -0.18 0">
+                        </a-entity>
+                        <!-- POSITION Y PLUS 0.1 -->
+                        <a-plane color="#003300" shader="flat" visual-feedback
+                                 scale="0.08 0.08 0.1" position="0.19 -0.18 0"
+                                 transform-position="axis: y; direction: positive; value: 0.1">
+                        </a-plane>
+                        <!-- POSITION Y PLUS 0.4 -->
+                        <a-plane color="#003300" shader="flat" visual-feedback
+                                 scale="0.08 0.08 0.1" position="0.28 -0.18 0"
+                                 transform-position="axis: y; direction: positive; value: 0.4">
+                        </a-plane>
+                        
+                        <!-- POSITION Z MINUS 0.4 -->
+                        <a-plane color="#440000" shader="flat" visual-feedback
+                                 scale="0.08 0.08 0.1" position="-0.16 -0.27 0"
+                                 transform-position="axis: z; direction: negative; value: 0.4">
+                        </a-plane>
+                        <!-- POSITION Z MINUS 0.1 -->
+                        <a-plane color="#440000" shader="flat" visual-feedback
+                                 scale="0.08 0.08 0.1" position="-0.07 -0.27 0"
+                                 transform-position="axis: z; direction: negative; value: 0.1">
+                        </a-plane>
+                        <!-- POSITION Z AXIS -->
+                        <a-entity text="value: Z:; color: #212121; align: center; width: 0.9"
+                                  geometry="primitive: plane; width: 0.06; height: 0.08"
+                                  material="color: #FFFFFF; shader: flat"
+                                  position="0.01 -0.27 0">
+                        </a-entity>
+                        <!-- POSITION Z VALUE -->
+                        <a-entity id="position-z-value"
+                                  text="color: #212121; align: center; width: 1"
+                                  geometry="primitive: plane; width: 0.1; height: 0.08"
+                                  material="color: #FFFFFF; shader: flat"
+                                  position="0.09 -0.27 0">
+                        </a-entity>
+                        <!-- POSITION Z PLUS 0.1 -->
+                        <a-plane color="#003300" shader="flat" visual-feedback
+                                 scale="0.08 0.08 0.1" position="0.19 -0.27 0"
+                                 transform-position="axis: z; direction: positive; value: 0.1">
+                        </a-plane>
+                        <!-- POSITION Z PLUS 0.4 -->
+                        <a-plane color="#003300" shader="flat" visual-feedback
+                                 scale="0.08 0.08 0.1" position="0.28 -0.27 0"
+                                 transform-position="axis: z; direction: positive; value: 0.4">
+                        </a-plane>
+                    </a-entity>
+
+                    <!-- ROTATION WRAPPER -->
+                    <a-entity position="0 0.4 0" class="hidable">
+                        <!-- ROTATION LABEL -->
+                        <a-entity text="value: ROTATION;
+                                        color: #AAAAAA; align: center; width: 0.8; letterSpacing: 2"
+                                  geometry="primitive: plane; width: 0.52; height: 0.08"
+                                  material="color: #212121; shader: flat"
+                                  position="0 0 0">
+                        </a-entity>
+                        <!-- ROTATION X MINUS 45 -->
+                        <a-plane color="#440000" shader="flat" visual-feedback
+                                 scale="0.08 0.08 0.1" position="-0.22 -0.09 0"
+                                 transform-rotation="axis: x; direction: negative; value: 45">
+                        </a-plane>
+                        <!-- ROTATION X MINUS 15 -->
+                        <a-plane color="#440000" shader="flat" visual-feedback
+                                 scale="0.08 0.08 0.1" position="-0.13 -0.09 0"
+                                 transform-rotation="axis: x; direction: negative; value: 15">
+                        </a-plane>
+                        <!-- ROTATION X AXIS -->
+                        <a-entity text="value: X:; color: #212121; align: center; width: 0.9"
+                                  geometry="primitive: plane; width: 0.06; height: 0.08"
+                                  material="color: #FFFFFF; shader: flat"
+                                  position="-0.05 -0.09 0">
+                        </a-entity>
+                        <!-- ROTATION X VALUE -->
+                        <a-entity id="rotation-x-value"
+                                  text="color: #212121; align: center; width: 1"
+                                  geometry="primitive: plane; width: 0.1; height: 0.08"
+                                  material="color: #FFFFFF; shader: flat"
+                                  position="0.03 -0.09 0">
+                        </a-entity>
+                        <!-- ROTATION X PLUS 15 -->
+                        <a-plane color="#003300" shader="flat" visual-feedback
+                                 scale="0.08 0.08 0.1" position="0.13 -0.09 0"
+                                 transform-rotation="axis: x; direction: positive; value: 15">
+                        </a-plane>
+                        <!-- ROTATION X PLUS 45 -->
+                        <a-plane color="#003300" shader="flat" visual-feedback
+                                 scale="0.08 0.08 0.1" position="0.22 -0.09 0"
+                                 transform-rotation="axis: x; direction: positive; value: 45">
+                        </a-plane>
+                        
+                        <!-- ROTATION Y MINUS 45 -->
+                        <a-plane color="#440000" shader="flat" visual-feedback
+                                 scale="0.08 0.08 0.1" position="-0.22 -0.18 0"
+                                 transform-rotation="axis: y; direction: negative; value: 45">
+                        </a-plane>
+                        <!-- ROTATION Y MINUS 15 -->
+                        <a-plane color="#440000" shader="flat" visual-feedback
+                                 scale="0.08 0.08 0.1" position="-0.13 -0.18 0"
+                                 transform-rotation="axis: y; direction: negative; value: 15">
+                        </a-plane>
+                        <!-- ROTATION Y AXIS -->
+                        <a-entity text="value: Y:; color: #212121; align: center; width: 0.9"
+                                  geometry="primitive: plane; width: 0.06; height: 0.08"
+                                  material="color: #FFFFFF; shader: flat"
+                                  position="-0.05 -0.18 0">
+                        </a-entity>
+                        <!-- ROTATION Y VALUE -->
+                        <a-entity id="rotation-y-value"
+                                  text="color: #212121; align: center; width: 1"
+                                  geometry="primitive: plane; width: 0.1; height: 0.08"
+                                  material="color: #FFFFFF; shader: flat"
+                                  position="0.03 -0.18 0">
+                        </a-entity>
+                        <!-- ROTATION Y PLUS 15 -->
+                        <a-plane color="#003300" shader="flat" visual-feedback
+                                 scale="0.08 0.08 0.1" position="0.13 -0.18 0"
+                                 transform-rotation="axis: y; direction: positive; value: 15">
+                        </a-plane>
+                        <!-- ROTATION Y PLUS 45 -->
+                        <a-plane color="#003300" shader="flat" visual-feedback
+                                 scale="0.08 0.08 0.1" position="0.22 -0.18 0"
+                                 transform-rotation="axis: y; direction: positive; value: 45">
+                        </a-plane>
+                        
+                        <!-- ROTATION Z MINUS 45 -->
+                        <a-plane color="#440000" shader="flat" visual-feedback
+                                 scale="0.08 0.08 0.1" position="-0.22 -0.27 0"
+                                 transform-rotation="axis: z; direction: negative; value: 45">
+                        </a-plane>
+                        <!-- ROTATION Z MINUS 15 -->
+                        <a-plane color="#440000" shader="flat" visual-feedback
+                                 scale="0.08 0.08 0.1" position="-0.13 -0.27 0"
+                                 transform-rotation="axis: z; direction: negative; value: 15">
+                        </a-plane>
+                        <!-- ROTATION Z AXIS -->
+                        <a-entity text="value: Z:; color: #212121; align: center; width: 0.9"
+                                  geometry="primitive: plane; width: 0.06; height: 0.08"
+                                  material="color: #FFFFFF; shader: flat"
+                                  position="-0.05 -0.27 0">
+                        </a-entity>
+                        <!-- ROTATION Z VALUE -->
+                        <a-entity id="rotation-z-value"
+                                  text="color: #212121; align: center; width: 1"
+                                  geometry="primitive: plane; width: 0.1; height: 0.08"
+                                  material="color: #FFFFFF; shader: flat"
+                                  position="0.03 -0.27 0">
+                        </a-entity>
+                        <!-- ROTATION Z PLUS 15 -->
+                        <a-plane color="#003300" shader="flat" visual-feedback
+                                 scale="0.08 0.08 0.1" position="0.13 -0.27 0"
+                                 transform-rotation="axis: z; direction: positive; value: 15">
+                        </a-plane>
+                        <!-- ROTATION Z PLUS 45 -->
+                        <a-plane color="#003300" shader="flat" visual-feedback
+                                 scale="0.08 0.08 0.1" position="0.22 -0.27 0"
+                                 transform-rotation="axis: z; direction: positive; value: 45">
+                        </a-plane>
+                    </a-entity>
+
+                    <!-- SCALE WRAPPER -->
+                    <a-entity position="0.61 0.4 0" class="hidable">
+                        <!-- SCALE LABEL -->
+                        <a-entity text="value: SCALE;
+                                        color: #AAAAAA; align: center; width: 0.8; letterSpacing: 2"
+                                  geometry="primitive: plane; width: 0.52; height: 0.08"
+                                  material="color: #212121; shader: flat"
+                                  position="-0.05 0 0">
+                        </a-entity>
+                        <!-- SCALE X MINUS 0.8 -->
+                        <a-plane color="#440000" shader="flat" visual-feedback
+                                 scale="0.08 0.08 0.1" position="-0.27 -0.09 0"
+                                 transform-scale="axis: x; direction: negative; value: 0.8">
+                        </a-plane>
+                        <!-- SCALE X MINUS 0.1 -->
+                        <a-plane color="#440000" shader="flat" visual-feedback
+                                 scale="0.08 0.08 0.1" position="-0.18 -0.09 0"
+                                 transform-scale="axis: x; direction: negative; value: 0.1">
+                        </a-plane>
+                        <!-- SCALE X AXIS -->
+                        <a-entity text="value: X:; color: #212121; align: center; width: 0.9"
+                                  geometry="primitive: plane; width: 0.06; height: 0.08"
+                                  material="color: #FFFFFF; shader: flat"
+                                  position="-0.1 -0.09 0">
+                        </a-entity>
+                        <!-- SCALE X VALUE -->
+                        <a-entity id="scale-x-value"
+                                  text="color: #212121; align: center; width: 1"
+                                  geometry="primitive: plane; width: 0.1; height: 0.08"
+                                  material="color: #FFFFFF; shader: flat"
+                                  position="-0.02 -0.09 0">
+                        </a-entity>
+                        <!-- SCALE X PLUS 0.1 -->
+                        <a-plane color="#003300" shader="flat" visual-feedback
+                                 scale="0.08 0.08 0.1" position="0.08 -0.09 0"
+                                 transform-scale="axis: x; direction: positive; value: 0.1">
+                        </a-plane>
+                        <!-- SCALE X PLUS 0.8 -->
+                        <a-plane color="#003300" shader="flat" visual-feedback
+                                 scale="0.08 0.08 0.1" position="0.17 -0.09 0"
+                                 transform-scale="axis: x; direction: positive; value: 0.8">
+                        </a-plane>
+                        
+                        <!-- SCALE Y MINUS 0.8 -->
+                        <a-plane color="#440000" shader="flat" visual-feedback
+                                 scale="0.08 0.08 0.1" position="-0.27 -0.18 0"
+                                 transform-scale="axis: y; direction: negative; value: 0.8">
+                        </a-plane>
+                        <!-- SCALE Y MINUS 01 -->
+                        <a-plane color="#440000" shader="flat" visual-feedback
+                                 scale="0.08 0.08 0.1" position="-0.18 -0.18 0"
+                                 transform-scale="axis: y; direction: negative; value: 0.1">
+                        </a-plane>
+                        <!-- SCALE Y AXIS -->
+                        <a-entity text="value: Y:; color: #212121; align: center; width: 0.9"
+                                  geometry="primitive: plane; width: 0.06; height: 0.08"
+                                  material="color: #FFFFFF; shader: flat"
+                                  position="-0.1 -0.18 0">
+                        </a-entity>
+                        <!-- SCALE Y VALUE -->
+                        <a-entity id="scale-y-value"
+                                  text="color: #212121; align: center; width: 1"
+                                  geometry="primitive: plane; width: 0.1; height: 0.08"
+                                  material="color: #FFFFFF; shader: flat"
+                                  position="-0.02 -0.18 0">
+                        </a-entity>
+                        <!-- SCALE Y PLUS 0.1 -->
+                        <a-plane color="#003300" shader="flat" visual-feedback
+                                 scale="0.08 0.08 0.1" position="0.08 -0.18 0"
+                                 transform-scale="axis: y; direction: positive; value: 0.1">
+                        </a-plane>
+                        <!-- SCALE Y PLUS 0.8 -->
+                        <a-plane color="#003300" shader="flat" visual-feedback
+                                 scale="0.08 0.08 0.1" position="0.17 -0.18 0"
+                                 transform-scale="axis: y; direction: positive; value: 0.8">
+                        </a-plane>
+                        
+                        <!-- SCALE Z MINUS 0.8 -->
+                        <a-plane color="#440000" shader="flat" visual-feedback
+                                 scale="0.08 0.08 0.1" position="-0.27 -0.27 0"
+                                 transform-scale="axis: z; direction: negative; value: 0.8">
+                        </a-plane>
+                        <!-- SCALE Z MINUS 0.1 -->
+                        <a-plane color="#440000" shader="flat" visual-feedback
+                                 scale="0.08 0.08 0.1" position="-0.18 -0.27 0"
+                                 transform-scale="axis: z; direction: negative; value: 0.1">
+                        </a-plane>
+                        <!-- SCALE Z AXIS -->
+                        <a-entity text="value: Z:; color: #212121; align: center; width: 0.9"
+                                  geometry="primitive: plane; width: 0.06; height: 0.08"
+                                  material="color: #FFFFFF; shader: flat"
+                                  position="-0.1 -0.27 0">
+                        </a-entity>
+                        <!-- SCALE Z VALUE -->
+                        <a-entity id="scale-z-value"
+                                  text="color: #212121; align: center; width: 1"
+                                  geometry="primitive: plane; width: 0.1; height: 0.08"
+                                  material="color: #FFFFFF; shader: flat"
+                                  position="-0.02 -0.27 0">
+                        </a-entity>
+                        <!-- SCALE Z PLUS 0.1 -->
+                        <a-plane color="#003300" shader="flat" visual-feedback
+                                 scale="0.08 0.08 0.1" position="0.08 -0.27 0"
+                                 transform-scale="axis: z; direction: positive; value: 0.1">
+                        </a-plane>
+                        <!-- SCALE Z PLUS 0.8 -->
+                        <a-plane color="#003300" shader="flat" visual-feedback
+                                 scale="0.08 0.08 0.1" position="0.17 -0.27 0"
+                                 transform-scale="axis: z; direction: positive; value: 0.8">
+                        </a-plane>
+                    </a-entity>
+                    
+                    <!-- ROTATE-UI BUTTONS WRAPPER -->
+                    <a-entity position="0 0.11 0.09">
+                        <!-- ROTATE-UI CW -->
+                        <a-entity id="rotate-ui-ccw" rotate-ui="direction: ccw"
+                                  text="value: < [; align: center; width: 1"
+                                  geometry="primitive: circle; radius: 0.08"
+                                  material="color: #212121; shader: flat"
+                                  position="-1 0 0" rotation="0 30 0"
+                                  visual-feedback>
+                        </a-entity>
+                         <!-- ROTATE-UI CCW -->
+                        <a-entity id="rotate-ui-cw" rotate-ui="direction: cw"
+                                  text="value: ] >; align: center; width: 1"
+                                  geometry="primitive: circle; radius: 0.08;"
+                                  material="color: #212121; shader: flat"
+                                  position="1 0 0" rotation="0 -30 0"
+                                  visual-feedback>
+                        </a-entity>
+                    </a-entity>
+                    
+                    <!-- PRIMITIVES WRAPPER -->
+                    <a-entity position="-0.34 0.01 0" class="hidable">
+                        <!-- PREVIOUS PRIMITIVE -->
+                        <a-entity id="previous-primitive" select-primitive="which: previous"
+                                  text="value: < -; align: center; width: 1"
+                                  geometry="primitive: plane; width: 0.08; height: 0.08"
+                                  material="color: #212121; shader: flat"
+                                  position="-0.09 -0.18 0"
+                                  visual-feedback>
+                        </a-entity>
+                        <!-- NEXT PRIMITIVE -->
+                        <a-entity id="next-primitive" select-primitive="which: next"
+                                  text="value: - >; align: center; width: 1"
+                                  geometry="primitive: plane; width: 0.08; height: 0.08"
+                                  material="color: #212121; shader: flat"
+                                  position="0.09 -0.18 0"
+                                  visual-feedback>
+                        </a-entity>
+                        <!-- BOX -->
+                        <a-box id="box" scale="0.09 0.09 0.09" position="0 -0.04 0"
+                               class="primitives" visible="true">
+                        </a-box>
+                        <!-- SPHERE -->
+                        <a-sphere id="sphere" scale="0.054 0.054 0.054" position="0 -0.04 0"
+                                  class="primitives" visible="false">
+                        </a-sphere>
+                        <!-- CYLINDER -->
+                        <a-cylinder id="cylinder" scale="0.054 0.054 0.054" position="0 -0.05 0"
+                                    class="primitives" visible="false">
+                        </a-cylinder>
+                        <!-- CONE -->
+                        <a-cone id="cone" scale="0.068 0.068 0.068" position="0 -0.04 0"
+                                class="primitives" visible="false">
+                        </a-cone>
+                    </a-entity>
+
+                    <!-- CREATE DELETE RESET SCENE WRAPPER -->
+                    <a-entity position="0 0.01 0" class="hidable">
+                        <!-- CREATE ENTITY BUTTON -->
+                        <a-entity id="create-entity" create-entity
+                                  text="value: CREATE; align: center; width: 0.8; letterSpacing: 2"
+                                  geometry="primitive: plane; width: 0.34; height: 0.08"
+                                  material="color: #212121; shader: flat"
+                                  position="0 0 0" visual-feedback>
+                        </a-entity>
+                        <!-- COPY ENTITY BUTTON -->
+                        <a-entity id="copy-entity" copy-entity
+                                  text="value: COPY; align: center; width: 0.8; letterSpacing: 2"
+                                  geometry="primitive: plane; width: 0.34; height: 0.08"
+                                  material="color: #212121; shader: flat"
+                                  position="0 -0.09 0" visual-feedback>
+                        </a-entity>
+                        <!-- RESET SCENE BUTTON -->
+                        <a-entity id="delete-entity" delete-entity
+                                  text="value: DELETE; align: center; width: 0.8; letterSpacing: 2"
+                                  geometry="primitive: plane; width: 0.34; height: 0.08"
+                                  material="color: #212121; shader: flat"
+                                  position="0 -0.18 0" visual-feedback>
+                        </a-entity>
+                    </a-entity>
+
+                    <!-- COLORS WRAPPER --> 
+                    <a-entity position="0.25 0.01 0" class="hidable">
+                        <!-- RED -->
+                        <a-plane color="#BB0000" shader="flat" compose-color
+                                 scale="0.08 0.08 0.1" position="0 0 0">
+                        </a-plane>
+                        <!-- ORANGE -->
+                        <a-plane color="#FF6600" shader="flat" compose-color
+                                 scale="0.08 0.08 0.1" position="0.09 0 0">
+                        </a-plane>
+                        <!-- YELOW -->
+                        <a-plane color="#FFAA00" shader="flat" compose-color
+                                 scale="0.08 0.08 0.1" position="0.18 0 0">
+                        </a-plane>
+                        <!-- GREEN -->
+                        <a-plane color="#009900" shader="flat" compose-color
+                                 scale="0.08 0.08 0.1" position="0 -0.09 0">
+                        </a-plane>
+                        <!-- BLUE -->
+                        <a-plane color="#0077FF" shader="flat" compose-color
+                                 scale="0.08 0.08 0.1" position="0.09 -0.09 0">
+                        </a-plane>
+                        <!-- PURPLE -->
+                        <a-plane color="#9900FF" shader="flat" compose-color
+                                 scale="0.08 0.08 0.1" position="0.18 -0.09 0">
+                        </a-plane>
+                        <!-- WHITE -->
+                        <a-plane color="#FFFFFF" shader="flat" compose-color
+                                 scale="0.08 0.08 0.1" position="0 -0.18 0">
+                        </a-plane>
+                        <!-- LIGHT GREY -->
+                        <a-plane color="#999999" shader="flat" compose-color
+                                 scale="0.08 0.08 0.1" position="0.09 -0.18 0">
+                        </a-plane>
+                        <!-- DARK GREY -->
+                        <a-plane color="#333333" shader="flat" compose-color
+                                 scale="0.08 0.08 0.1" position="0.18 -0.18 0">
+                        </a-plane>
+                    </a-entity>
+                    
+                    <!-- TOGGLE UI BUTTON -->
+                    <a-entity toggle-ui
+                              text="value: TOGGLE UI; align: center; width: 0.8; letterSpacing: 2"
+                              geometry="primitive: plane; width: 0.34; height: 0.08"
+                              material="color: #212121; shader: flat"
+                              position="0 -0.26 0" visual-feedback>
+                    </a-entity>
+
+                    <!-- DESIGNED AND CODED BY -->
+                    <a-entity text="value: A WebVR experiment designed and coded by Danilo Pasquariello | @theDart76;
+                                    color: #AAAAAA; align: center; width: 1.76;
+                                    lineHeight: 32; wrapCount: 80; letterSpacing: 2"
+                              geometry="primitive: plane; width: 1.64; height: 0.08"
+                              material="color: #212121; shader: flat"
+                              position="0 -0.35 0">
+                    </a-entity>
+                    
+                </a-entity>
+                
+            </a-entity>
+            
+			<!-- CAMERA -->
+			<a-camera></a-camera>
+			<!-- GEAR VR CONTROLS | WORKING ON OCULUS GO -->
+			<a-entity gearvr-controls="hand: right">
+				<!-- LASER RAYCASTER -->
+				<a-entity id="laser" cursor="fuse: false" line="color: #FF0099"
+						  raycaster="showLine: true"
+						  smooth-teleportation>
+				</a-entity>
+			</a-entity>
+            
+		</a-entity>
+        
+        <!-- WEBVR DISPLAY -->
+        <a-entity id="webvr-display" default-primitive visible="false"
+                  text="baseline: center; z-offset: 0.01; width: 14"
+                  geometry="primitive: plane; width: 16; height: 2"
+                  material="color: #000000"
+                  position="0 4 -8">
+        </a-entity>
+        
+        <!-- CREDITS AND SPECIAL THANKS -->
+		<a-image src="#credits" scale="4 4 1" position="0 2.5 12" rotation="0 180 0"></a-image>
+
+		<!-- GROUND -->
+		<a-plane material="shader: flat; src: #grid; repeat: 24 24"
+                 rotation="-90 0 0" scale="24 24 1">
+		</a-plane>
+        
+	</a-scene>
+</body>
+</html>
