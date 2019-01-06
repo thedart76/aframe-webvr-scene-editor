@@ -11,7 +11,7 @@ A continuously WIP experiment using A-Frame to create WebVR scenes in VR Mode
 
 ------------
 
-###Updates
+### Updates
 
 ⚠️ This is the very 1st prototype as a POC. The current version of my **aframe-webvr-scene-editor** is designed for **Oculus Go** (and other 3DOF devices).
 
@@ -29,7 +29,7 @@ A continuously WIP experiment using A-Frame to create WebVR scenes in VR Mode
 
 ------------
 
-###Credits
+### Credits
 
 The locomotion method in my **aframe-webvr-scene-editor** experiment relies on the [aframe-extras / movement-controls](https://github.com/donmccurdy/aframe-extras/tree/master/src/controls "aframe-extras / movement-controls") component created by Don McCurdy.
 
