@@ -19,7 +19,7 @@ A continuously WIP experiment using A-Frame to create WebVR scenes in VR Mode
 
 💻 [**TRY THE DEMO**](https://thewebvrlab.io/aframe-webvr-scene-editor.html "TRY THE DEMO") of my A-Frame experiment.
 
-📺 [**WATCH THE VIDEO**](https://www.youtube.com/watch?v=4mG1gNVArd4/ "WATCH THE VIDEO") of me playing around with the scene editor in VR Mode.
+📺 [**WATCH THE VIDEO**](https://www.youtube.com/watch?v=zvcEukT7zMc/ "WATCH THE VIDEO") of me playing around with the scene editor in VR Mode.
 
 ------------
 
