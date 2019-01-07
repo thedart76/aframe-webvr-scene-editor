@@ -41,4 +41,4 @@ The locomotion method in my **aframe-webvr-scene-editor** experiment relies on t
 
 Distributed under an [MIT License](https://github.com/thedart76/aframe-webvr-scene-editor/blob/master/LICENSE "MIT License").
 
-Designed an coded by Danilo Pasquariello - [January 2019](https://twitter.com/theDart76 "January 2019")
+Designed an coded by Danilo Pasquariello - [January 2019](https://twitter.com/theDart76/status/1082224041283543040 "January 2019")
