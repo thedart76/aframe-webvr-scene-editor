@@ -7,7 +7,11 @@ A continuously WIP experiment using A-Frame to create WebVR scenes in VR Mode
 
 ### Info
 
-❓ Enter VR mode and start playing around with some primitives to populate the scene and create basic 3D environments!
+❓ Designing for VR is different than designing for flat experiences.
+
+**1 unit = 1 meter**
+
+Enter VR mode and start playing around with some primitives to populate the scene and learn how important designing at actual scale is!
 
 ------------
 
