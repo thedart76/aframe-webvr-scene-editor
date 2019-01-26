@@ -27,7 +27,7 @@ Enter VR mode and play with primitives to populate the scene and **learn how imp
 
 👀 **[VIEW THE DEMO SOURCE CODE](https://github.com/thedart76/aframe-webvr-scene-editor/blob/master/index.html "VIEW THE DEMO SOURCE CODE")**
 
-👀 **[VIEW THE COMPONENTS SOURCE CODE](https://github.com/thedart76/aframe-webvr-scene-editor/blob/master/js/aframe-webvr-scene-editor-v1.js "VIEW THE COMPONENT SOURCE CODE")**
+👀 **[VIEW THE COMPONENTS SOURCE CODE](https://github.com/thedart76/aframe-webvr-scene-editor/blob/master/js/aframe-webvr-scene-editor-v0-1-2.js "VIEW THE COMPONENT SOURCE CODE")**
 
 ------------
 
