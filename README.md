@@ -15,7 +15,9 @@ Enter VR mode and play with primitives to populate the scene and **learn how imp
 
 ### Updates
 
-⚠️ This is the very 1st prototype as a POC. The current version of my **aframe-webvr-scene-editor** is designed for **Oculus Go** (and other 3DOF devices).
+⚠️ Version 0.1.2 now includes the axis helper to make it easier to transform the 3D objects while moving around.
+
+The current version of my **aframe-webvr-scene-editor** is designed for **Oculus Go** (and other 3DOF devices).
 
 ------------
 
