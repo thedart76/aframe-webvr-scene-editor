@@ -11,7 +11,7 @@ A continuously WIP experiment using A-Frame to create WebVR scenes in VR Mode
 
 **1 unit = 1 meter**
 
-Enter VR mode and play with some primitives to populate the scene to learn how important designing at actual scale is!
+Enter VR mode and play with primitives to populate the scene and **learn how important designing at actual scale is!**
 
 ------------
 
