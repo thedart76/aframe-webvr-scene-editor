@@ -1,7 +1,7 @@
 # aframe-webvr-scene-editor
 A continuously WIP experiment using A-Frame to create WebVR scenes in VR Mode
 
-![](https://raw.githubusercontent.com/thedart76/aframe-webvr-scene-editor/master/aframe-webvr-scene-editor-img.png)
+![](https://raw.githubusercontent.com/thedart76/aframe-webvr-scene-editor/master/aframe-webvr-scene-editor-v0-1-2-img.png)
 
 ## Introduction
 
