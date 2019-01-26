@@ -1,12 +1,12 @@
 <!doctype html>
 <html>
 <head>
-    <title>A-Frame WebVR Scene Editor</title>
+    <title>A-Frame WebVR Scene Editor v0.1.2</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="A WebVR experiment using A-Frame designed and coded by Danilo Pasquariello | Follow me on Twitter @theDart76">
     <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
     <!-- WebVR Scene Editor -->
-    <script src="js/aframe-webvr-scene-editor-v1.js"></script>
+    <script src="js/aframe-webvr-scene-editor-v0-1-2.js"></script>
     <!-- Required Component For Locomotion -->
     <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v5.0.0/dist/aframe-extras.min.js"></script>
 </head>
@@ -28,6 +28,17 @@
                 <!-- UI WRAPPER - OFFSET -->
                 <a-entity position="0 0.5 -1.5" rotation="-30 0 0">
                     
+                    <!-- ROTATION WARNING -->
+                    <a-entity id="rotation-warning-wrapper" position="0 0.51 0" visible="false" class="hidable">
+                        <a-entity id="rotation-warning"
+                                  text="value: When you rotate an object, the subsequent Rotation and Scale transformations\n will be applied matching the new orientation of its Local Axis.;
+                                        color: #FFDD00; align: center; width: 1.76;
+                                        lineHeight: 48; wrapCount: 80; letterSpacing: 2"
+                                  geometry="primitive: plane; width: 1.64; height: 0.12"
+                                  material="color: #212121; shader: flat">
+                        </a-entity>
+                    </a-entity>
+                    
                     <!-- POSITION WRAPPER -->
                     <a-entity position="-0.62 0.4 0" class="hidable">
                         <!-- POSITION LABEL -->
@@ -48,9 +59,9 @@
                                  transform-position="axis: x; direction: negative; value: 0.1">
                         </a-plane>
                         <!-- POSITION X AXIS -->
-                        <a-entity text="value: X:; color: #212121; align: center; width: 0.9"
+                        <a-entity text="value: X:; color: #FFFFFF; align: center; width: 0.9"
                                   geometry="primitive: plane; width: 0.06; height: 0.08"
-                                  material="color: #FFFFFF; shader: flat"
+                                  material="color: #FF0000; shader: flat"
                                   position="0.01 -0.09 0">
                         </a-entity>
                         <!-- POSITION X VALUE -->
@@ -84,7 +95,7 @@
                         <!-- POSITION Y AXIS -->
                         <a-entity text="value: Y:; color: #212121; align: center; width: 0.9"
                                   geometry="primitive: plane; width: 0.06; height: 0.08"
-                                  material="color: #FFFFFF; shader: flat"
+                                  material="color: #00FF00; shader: flat"
                                   position="0.01 -0.18 0">
                         </a-entity>
                         <!-- POSITION Y VALUE -->
@@ -116,9 +127,9 @@
                                  transform-position="axis: z; direction: negative; value: 0.1">
                         </a-plane>
                         <!-- POSITION Z AXIS -->
-                        <a-entity text="value: Z:; color: #212121; align: center; width: 0.9"
+                        <a-entity text="value: Z:; color: #FFFFFF; align: center; width: 0.9"
                                   geometry="primitive: plane; width: 0.06; height: 0.08"
-                                  material="color: #FFFFFF; shader: flat"
+                                  material="color: #0000FF; shader: flat"
                                   position="0.01 -0.27 0">
                         </a-entity>
                         <!-- POSITION Z VALUE -->
@@ -160,9 +171,9 @@
                                  transform-rotation="axis: x; direction: negative; value: 15">
                         </a-plane>
                         <!-- ROTATION X AXIS -->
-                        <a-entity text="value: X:; color: #212121; align: center; width: 0.9"
+                        <a-entity text="value: X:; color: #FFFFFF; align: center; width: 0.9"
                                   geometry="primitive: plane; width: 0.06; height: 0.08"
-                                  material="color: #FFFFFF; shader: flat"
+                                  material="color: #FF0000; shader: flat"
                                   position="-0.05 -0.09 0">
                         </a-entity>
                         <!-- ROTATION X VALUE -->
@@ -196,7 +207,7 @@
                         <!-- ROTATION Y AXIS -->
                         <a-entity text="value: Y:; color: #212121; align: center; width: 0.9"
                                   geometry="primitive: plane; width: 0.06; height: 0.08"
-                                  material="color: #FFFFFF; shader: flat"
+                                  material="color: #00FF00; shader: flat"
                                   position="-0.05 -0.18 0">
                         </a-entity>
                         <!-- ROTATION Y VALUE -->
@@ -228,9 +239,9 @@
                                  transform-rotation="axis: z; direction: negative; value: 15">
                         </a-plane>
                         <!-- ROTATION Z AXIS -->
-                        <a-entity text="value: Z:; color: #212121; align: center; width: 0.9"
+                        <a-entity text="value: Z:; color: #FFFFFF; align: center; width: 0.9"
                                   geometry="primitive: plane; width: 0.06; height: 0.08"
-                                  material="color: #FFFFFF; shader: flat"
+                                  material="color: #0000FF; shader: flat"
                                   position="-0.05 -0.27 0">
                         </a-entity>
                         <!-- ROTATION Z VALUE -->
@@ -272,9 +283,9 @@
                                  transform-scale="axis: x; direction: negative; value: 0.1">
                         </a-plane>
                         <!-- SCALE X AXIS -->
-                        <a-entity text="value: X:; color: #212121; align: center; width: 0.9"
+                        <a-entity text="value: X:; color: #FFFFFF; align: center; width: 0.9"
                                   geometry="primitive: plane; width: 0.06; height: 0.08"
-                                  material="color: #FFFFFF; shader: flat"
+                                  material="color: #FF0000; shader: flat"
                                   position="-0.1 -0.09 0">
                         </a-entity>
                         <!-- SCALE X VALUE -->
@@ -308,7 +319,7 @@
                         <!-- SCALE Y AXIS -->
                         <a-entity text="value: Y:; color: #212121; align: center; width: 0.9"
                                   geometry="primitive: plane; width: 0.06; height: 0.08"
-                                  material="color: #FFFFFF; shader: flat"
+                                  material="color: #00FF00; shader: flat"
                                   position="-0.1 -0.18 0">
                         </a-entity>
                         <!-- SCALE Y VALUE -->
@@ -340,9 +351,9 @@
                                  transform-scale="axis: z; direction: negative; value: 0.1">
                         </a-plane>
                         <!-- SCALE Z AXIS -->
-                        <a-entity text="value: Z:; color: #212121; align: center; width: 0.9"
+                        <a-entity text="value: Z:; color: #FFFFFF; align: center; width: 0.9"
                                   geometry="primitive: plane; width: 0.06; height: 0.08"
-                                  material="color: #FFFFFF; shader: flat"
+                                  material="color: #0000FF; shader: flat"
                                   position="-0.1 -0.27 0">
                         </a-entity>
                         <!-- SCALE Z VALUE -->
@@ -394,6 +405,14 @@
                                   position="-0.09 -0.18 0"
                                   visual-feedback>
                         </a-entity>
+                        <!-- TOGGLE AXIS HELPERS -->
+                        <a-entity toggle-axis-helpers
+                                  text="value: H; align: center; width: 0.8"
+                                  geometry="primitive: plane; width: 0.08; height: 0.08"
+                                  material="color: #212121; shader: flat"
+                                  position="0 -0.18 0"
+                                  visual-feedback>
+                        </a-entity>
                         <!-- NEXT PRIMITIVE -->
                         <a-entity id="next-primitive" select-primitive="which: next"
                                   text="value: - >; align: center; width: 1"
@@ -420,7 +439,7 @@
                         </a-cone>
                     </a-entity>
 
-                    <!-- CREATE DELETE RESET SCENE WRAPPER -->
+                    <!-- CREATE COPY DELETE SCENE WRAPPER -->
                     <a-entity position="0 0.01 0" class="hidable">
                         <!-- CREATE ENTITY BUTTON -->
                         <a-entity id="create-entity" create-entity
@@ -519,12 +538,54 @@
             
 		</a-entity>
         
+        <!-- WORLD AXIS HELPER -->
+        <a-entity id="world-axis-helper-wrapper" visible="false">
+            <!-- PIVOT -->
+            <a-box color="#FFFF" scale="0.04 0.04 0.04" position="0 0.01 0">
+            </a-box>
+            <!-- X AXIS -->
+            <a-box color="#FF0000" scale="12 0.02 0.02" position="6 0.01 0">
+            </a-box>
+            <!-- Y AXIS -->
+            <a-box color="#00FF00" scale="0.02 12 0.02" position="0 6 0">
+            </a-box>
+            <!-- Z AXIS -->
+            <a-box color="#0000FF" scale="0.02 0.02 12" position="0 0.01 6">
+            </a-box>
+        </a-entity>
+        
+        <!-- LOCAL AXIS HELPER -->
+        <a-entity id="local-axis-helper-wrapper" visible="false">
+            <!-- PIVOT -->
+            <a-box color="#FFFF" scale="0.02 0.02 0.02" position="0 0.01 0">
+            </a-box>
+            <!-- X AXIS -->
+            <a-box color="#FF0000" scale="3 0.01 0.01" position="1.5 0.01 0">
+            </a-box>
+            <!-- Y AXIS -->
+            <a-box color="#00FF00" scale="0.01 3 0.01" position="0 1.5 0">
+            </a-box>
+            <!-- Z AXIS -->
+            <a-box color="#0000FF" scale="0.01 0.01 3" position="0 0.01 1.5">
+            </a-box>
+        </a-entity>
+        
         <!-- WEBVR DISPLAY -->
         <a-entity id="webvr-display" default-primitive visible="false"
-                  text="baseline: center; z-offset: 0.01; width: 14"
+                  text="baseline: center; width: 14; z-offset: 0.01;"
                   geometry="primitive: plane; width: 16; height: 2"
                   material="color: #000000"
                   position="0 4 -8">
+        </a-entity>
+        
+        <!-- UNITS IN VR -->
+        <a-entity text="value: Designing for VR is different than designing for flat experiences.\n1 unit = 1 meter\nLearn how important designing at actual scale is!;
+                        color: #AAAAAA; align: center; width: 18;
+                        lineHeight: 64; wrapCount: 56; letterSpacing: 2;
+                        z-offset: 0.01"
+                  geometry="primitive: plane; width: 22; height: 4"
+                  material="color: #212121; shader: flat"
+                  position="0 6 -12">
         </a-entity>
         
         <!-- CREDITS AND SPECIAL THANKS -->
