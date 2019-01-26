@@ -7,9 +7,7 @@ A continuously WIP experiment using A-Frame to create WebVR scenes in VR Mode
 
 ### Info
 
-❓ Designing for VR is different than designing for flat experiences.
-
-**1 unit = 1 meter**
+❓ Designing for VR is different than designing for flat experiences, because **1 unit = 1 meter**.
 
 Enter VR mode and play with primitives to populate the scene and **learn how important designing at actual scale is!**
 
